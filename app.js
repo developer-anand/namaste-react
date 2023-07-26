@@ -1,58 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const jsxHeading = <h1>Hi from JSX</h1>;
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <div className="logo">
+          <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/food-app-icon-food-explorer-design-template-8ae900e41ccbc0a2e1b48a85d239e389_screen.jpg?ts=1585237320" />
+        </div>
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
 
-const test = (
-  <>
-    <h1>hi</h1>
-    <h2>there</h2>
-  </>
-);
+          <li>About Us</li>
 
-// const HeadingComponent = () => {
-//   return "Hi this is Namaste React";
-// };
+          <li>Contact</li>
 
-//component composition
-const HeadingComponent = () => <h1>Heading Component</h1>;
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-const ComponentComposition = () => (
-  <>
-    <HeadingComponent />
-    <>
-      <h1>hi</h1>
-    </>
-    <h2>Welcome</h2>
-  </>
-);
-
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+    </div>
+  );
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<ComponentComposition />);
-
-console.log(HeadingComponent);
-
-// const heading = React.createElement(
-//   "h1",
-//   {
-//     id: "heading",
-//     abc: "sks",
-//   },
-//   "Hi Frommmm React Test"
-// );
-
-// const parent = React.createElement("div", { id: "parent" }, [
-//   React.createElement("div", { id: "child" }, [
-//     React.createElement("h1", {}, "Hi from child 1 "),
-//     React.createElement("h1", {}, "Hi from child 2"),
-//   ]),
-//   React.createElement("div", { id: "child" }, [
-//     React.createElement("h1", {}, "Hi from child 1 "),
-//     React.createElement("h1", {}, "Hi from child 2"),
-//   ]),
-// ]);
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// console.log(root.render(parent));
+root.render(<AppLayout />);
