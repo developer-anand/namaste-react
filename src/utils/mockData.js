@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Restaurants from "./restaurant";
-
 const resList = [
   {
     info: {
@@ -751,78 +747,4 @@ const resList = [
   },
 ];
 
-const ResCard = (props) => {
-  const { resData } = props;
-
-  const { cloudinaryImageId } = resData.info;
-
-  return (
-    <div
-      className="res-card"
-      style={{
-        backgroundColor: "f0f0f0",
-      }}
-    >
-      <img
-        className="res-card-img"
-        src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/".concat(
-          resData.info.cloudinaryImageId
-        )}
-      />
-
-      <h4>{resData.info.name}</h4>
-      <h6>{resData.info.cuisines.join(", ")}</h6>
-      <h6>{resData.info.avgRating}</h6>
-      <h6>{resData.info.costForTwo}</h6>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search-container">
-        <h3>Search</h3>
-      </div>
-
-      <div className="res-container">
-        <ResCard resData={resList[1]} />
-      </div>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/food-app-icon-food-explorer-design-template-8ae900e41ccbc0a2e1b48a85d239e389_screen.jpg?ts=1585237320"
-        />
-      </div>
-
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default resList;
